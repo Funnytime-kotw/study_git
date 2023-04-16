@@ -144,3 +144,33 @@ git commit -m "send file to Github"  # 添加到本地仓库
 git push  # 提交到远程仓库
 ```
 
+
+
+## Git分支管理
+
+git分支中常用指令：
+
+```bash
+# 列出所有本地分支
+git branch
+
+# 列出所有远程分支
+git branch -r
+
+# 新建一个分支，但依然停留在当前分支
+git branch [branch-name]
+
+# 新建一个分支，并切换到该分支
+git checkout -b [branch]
+
+# 合并指定分支到当前分支
+$ git merge [branch]
+
+# 删除分支
+$ git branch -d [branch-name]
+
+# 删除远程分支
+$ git push origin --delete [branch-name]
+$ git branch -dr [remote/branch]
+```
+
