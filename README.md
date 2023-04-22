@@ -126,9 +126,9 @@ build/       # 忽略build/目录下的所有文件
 doc/*.txt    # 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt
 ```
 
-使用Github：
+==使用Github==：
 
-设置本机绑定SSH(Secure Shell Protocol)公钥，实现免密码登录
+设置本机绑定==SSH(Secure Shell Protocol)==公钥，实现免密码登录
 
 ```bash
 # 进入 C:\Users\Administrator\.ssh 目录
@@ -144,7 +144,38 @@ git commit -m "send file to Github"  # 添加到本地仓库
 git push  # 提交到远程仓库
 ```
 
+==在PyCharm使用Github==
 
+1. 配置git
+
+   ```bash
+   git config --global user.name "用户名"
+   git config --global user.email  "用户邮箱"
+   ```
+
+2. git ssh
+
+   ```bash
+   ssh-keygen -t rsa -C "你的邮箱"  三个连续回车，设置密码为空
+   # 在C盘中找到.ssh，得到id_rsa和id_rsa.pub，用记事本打开id_rsa.pub，复制里面的内容。
+   # 打开GitHub-Personal settings-SSH and GPG keys
+   ```
+
+   
+
+3. 在PyCharm里配置git
+
+   <img src="README.assets/2.png" style="zoom: 50%;" />
+
+4. 在PyCharm绑定Github并给Github设置自动代理
+
+   <img src="README.assets/3.png" style="zoom:50%;" />
+
+   <img src="README.assets/4.png" alt="4" style="zoom:50%;" />
+
+5. 用git更新库、克隆库
+
+   ![](README.assets/2-1682167502590-4.png)
 
 ## Git分支管理
 
@@ -172,5 +203,8 @@ $ git branch -d [branch-name]
 # 删除远程分支
 $ git push origin --delete [branch-name]
 $ git branch -dr [remote/branch]
+
+# 添加标签
+git tag -a 标签名 -m "备注"
 ```
 
