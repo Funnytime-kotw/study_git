@@ -214,7 +214,7 @@ git tag -a 标签名 -m "备注"
 
 ### ==版本号([b站尚硅谷p20](https://www.bilibili.com/video/BV1wm4y1z7Dg/?p=20))==
 
-SHA-1：40位
+SHA-1：40位 
 
 定位仓库中的文件：2+38
 
