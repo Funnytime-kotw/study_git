@@ -33,9 +33,14 @@ Git是分布式版本控制系统，没有中央服务器，每个人的电脑�
 
 ### Git配置
 
-- 查看配置  `git config -l`
-- 查看系统config  `git config --system --list`
-- 查看当前用户（global）配置  `git config --global  --list`
+```bash
+# 查看配置
+git config -l
+# 查看系统config
+git config --system --list
+# 查看当前用户（global）配置
+git config --global  --list
+```
 
 ==相关配置文件所在路径==
 
@@ -74,12 +79,6 @@ Git本地有三个工作区域：工作目录（Working Directory）、暂存区
 
 ![Snipaste_2023-04-16_16-03-49](README.assets/Snipaste_2023-04-16_16-03-49.png)
 
-### 本地仓库搭建：
-
-- 如果要创建一个全新的仓库：`git init`
-
-- 如果要克隆一个远程仓库：`git clone [url]`
-
 ### 文件的四种状态：
 
 - Untracked：未跟踪，此文件在文件夹中，但并没有加入到git库，不参与版本控制。通过git add .状态变为Staged
@@ -90,10 +89,13 @@ Git本地有三个工作区域：工作目录（Working Directory）、暂存区
 ### ==更改文件状态==：
 
 ```bash
+# 创建文件目录
+git init
+
 # 查看指定文件状态
 git status [filename]
 
-# 查看所有文件状态
+# 查看所有文件暂存区状态
 git status
 
 # 添加所有文件到暂存区
@@ -103,10 +105,22 @@ git add .
 git commit -m "消息内容"    
 
 # 将本地仓库文件提交到远程仓库
-git push
+git push 远程仓库名（可选）
 
 # 获取远程仓库更新
 git pull
+
+# 恢复文件（误删除）
+git restore 文件名
+
+# 如果删除文件后，回收站也删除了，还commit了，需要使用reset/revert操作
+git log online # 查看版本历史记录
+git reset --hard 版本号  # 恢复到版本号，但是之后的版本会消失
+git revert 版本号2  # 恢复到版本号2的上一个版本号，之后的版本不会消失
+
+# 给版本添加/删除标签
+git tag 标签名 版本号
+git tag -d 标签名
 ```
 
 ### ==忽略文件==
@@ -218,3 +232,10 @@ SHA-1：40位
 
 定位仓库中的文件：2+38
 
+
+
+
+
+# 参考资料
+
+1. [尚硅谷git](https://www.bilibili.com/video/BV1wm4y1z7Dg)
