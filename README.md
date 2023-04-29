@@ -177,8 +177,6 @@ git push  # 提交到远程仓库
    # 打开GitHub-Personal settings-SSH and GPG keys
    ```
 
-   
-
 3. 在PyCharm里配置git
 
    <img src="README.assets/2.png" style="zoom: 50%;" />
@@ -192,6 +190,40 @@ git push  # 提交到远程仓库
 5. 用git更新库、克隆库
 
    <img src="README.assets/2-1682167502590-4.png" style="zoom: 50%;" />
+
+### git clone/fetch/pull区别
+
+#### git clone
+
+拷贝远程仓库到本地，复制下来的是整个版本库，文件目录下会生成一个.git文件夹，不用git init初始化。git clone是一个从无到有的过程。
+
+```bash
+git clone <url>
+```
+
+#### git fetch
+
+用于从远程仓库获取代码库，==不会自动合并、修改==
+
+```bash
+git fetch <远程代码库>  # 指定库的更新全部取回本地
+git fetch <远程代码库> <远程分支名>  # 可以指定拉取哪个分支
+```
+
+#### git pull
+
+用于远程仓库获取代码并合并到本地版本，git pull = git fetch + git merge
+
+```bash
+git pull <远程仓库名> <远程分支名> : <本地分支名>
+git pull my_project master : leaf_01
+```
+
+如果是远程分支和本地当前分支合并，冒号后面指定分支语句可以省略
+
+```bash
+git pull my_project master
+```
 
 
 
